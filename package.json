@@ -1,0 +1,16 @@
+{
+  "name": "schnorpfeil",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node build.js && vite",
+    "build": "node build.js && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.1",
+    "tailwindcss": "^4.2.1",
+    "vite": "^7.3.1"
+  }
+}
