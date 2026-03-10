@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ lang }}" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -31,7 +32,8 @@
     <!-- Official Open Sans Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
     <!-- Tailwind CSS -->
     <link href="/src/style.css" rel="stylesheet">
     <!-- JSON-LD: Organization + LocalBusiness + BreadcrumbList (GEO/AI-optimized) -->
@@ -150,81 +152,147 @@
     }
     </script>
 </head>
+
 <body class="antialiased font-sans selection:bg-primary selection:text-white flex flex-col min-h-screen">
 
     <!-- HEADER / NAVIGATION -->
     <nav id="main-nav" class="fixed top-0 inset-x-0 z-50 border-b transition-all duration-300">
-        <div id="header-container" class="max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-300">
+        <div id="header-container"
+            class="max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-300">
             <!-- Logo -->
             <div class="flex items-center">
                 <a href="{{ baseUrl }}" class="flex items-center transition-all duration-300">
-                    <img src="/logos/SchnorpfeilFilled.svg" alt="Schnorpfeil Logo" id="header-logo" class="w-auto object-contain transition-all duration-300" />
+                    <img src="/logos/SchnorpfeilFilled.svg" alt="Schnorpfeil Logo" id="header-logo"
+                        class="w-auto object-contain transition-all duration-300" />
                 </a>
                 <div class="hidden sm:flex items-center ml-5">
                     <div class="h-6 w-px bg-current opacity-20 nav-brand-text transition-colors duration-300"></div>
-                    <span class="nav-brand-text text-[0.85rem] font-bold tracking-[0.12em] uppercase transition-colors duration-300 ml-4">{{ nav_brand_text }}</span>
+                    <span
+                        class="nav-brand-text text-[0.85rem] font-bold tracking-[0.12em] uppercase transition-colors duration-300 ml-4">{{
+                        nav_brand_text }}</span>
                 </div>
             </div>
 
             <!-- Actions -->
             <div class="flex items-center gap-4 sm:gap-6 text-sm font-medium">
                 <!-- Karriere (external) -->
-                <a href="https://schnorpfeil.eu/karriere/" target="_blank" rel="noopener" class="nav-link hidden sm:inline-flex items-center gap-1.5 text-[0.7rem] font-bold tracking-[0.1em] transition-colors uppercase border border-current rounded-none px-3 py-1.5 relative overflow-hidden group hover:!text-white hover:border-primary hover:!border-primary">
+                <a href="https://schnorpfeil.eu/karriere/" target="_blank" rel="noopener"
+                    class="nav-link hidden sm:inline-flex items-center gap-1.5 text-[0.7rem] font-bold tracking-[0.1em] transition-colors uppercase border border-current rounded-none px-3 py-1.5 relative overflow-hidden group hover:!text-white hover:border-primary hover:!border-primary">
                     <span class="relative z-10 flex items-center gap-1.5">
                         {{ nav_career }}
-                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="opacity-80 group-hover:opacity-100 transition-opacity"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                            class="opacity-80 group-hover:opacity-100 transition-opacity">
+                            <path d="M7 7h10v10" />
+                            <path d="M7 17 17 7" />
+                        </svg>
                     </span>
-                    <div class="absolute inset-0 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 z-0"></div>
+                    <div
+                        class="absolute inset-0 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 z-0">
+                    </div>
                 </a>
 
                 <!-- Theme Toggle (Pill) -->
-                <button id="theme-toggle" class="hidden sm:flex items-center cursor-pointer rounded-none group relative" aria-label="Toggle blue mode" title="{{ theme_toggle_label }}" style="width: 56px; height: 28px;">
+                <button id="theme-toggle" class="hidden sm:flex items-center cursor-pointer rounded-none group relative"
+                    aria-label="Toggle blue mode" title="{{ theme_toggle_label }}" style="width: 56px; height: 28px;">
                     <!-- Track -->
-                    <div id="theme-toggle-track" class="absolute inset-0 rounded-none transition-all duration-300" style="background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35);"></div>
+                    <div id="theme-toggle-track" class="absolute inset-0 rounded-none transition-all duration-300"
+                        style="background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35);"></div>
                     <!-- Sliding thumb with icon inside -->
-                    <div id="theme-toggle-dot" class="absolute top-[3px] left-[3px] w-[22px] h-[22px] rounded-none flex items-center justify-center transition-all duration-300 ease-in-out" style="z-index:2; background: rgba(255,255,255,0.95); box-shadow: 0 1px 4px rgba(0,0,0,0.15);">
+                    <div id="theme-toggle-dot"
+                        class="absolute top-[3px] left-[3px] w-[22px] h-[22px] rounded-none flex items-center justify-center transition-all duration-300 ease-in-out"
+                        style="z-index:2; background: rgba(255,255,255,0.95); box-shadow: 0 1px 4px rgba(0,0,0,0.15);">
                         <!-- Sun icon inside thumb (light mode) -->
-                        <svg id="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00478A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-opacity duration-300"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                        <svg id="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                            viewBox="0 0 24 24" fill="none" stroke="#00478A" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round" class="transition-opacity duration-300">
+                            <circle cx="12" cy="12" r="4" />
+                            <path d="M12 2v2" />
+                            <path d="M12 20v2" />
+                            <path d="m4.93 4.93 1.41 1.41" />
+                            <path d="m17.66 17.66 1.41 1.41" />
+                            <path d="M2 12h2" />
+                            <path d="M20 12h2" />
+                            <path d="m6.34 17.66-1.41 1.41" />
+                            <path d="m19.07 4.93-1.41 1.41" />
+                        </svg>
                         <!-- Hard hat icon inside thumb (blue mode) -->
-                        <svg id="theme-icon-hat" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00478A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="absolute transition-opacity duration-300 opacity-0"><path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2z"/><path d="M10 15V7a2 2 0 0 1 2-2v0a2 2 0 0 1 2 2v8"/><path d="M6 15v-2a6 6 0 0 1 12 0v2"/></svg>
+                        <svg id="theme-icon-hat" xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                            viewBox="0 0 24 24" fill="none" stroke="#00478A" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round" class="absolute transition-opacity duration-300 opacity-0">
+                            <path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2z" />
+                            <path d="M10 15V7a2 2 0 0 1 2-2v0a2 2 0 0 1 2 2v8" />
+                            <path d="M6 15v-2a6 6 0 0 1 12 0v2" />
+                        </svg>
                     </div>
                 </button>
 
                 <!-- i18n switcher -->
                 <div class="hidden sm:flex items-center nav-link transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe nav-icon mr-2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-globe nav-icon mr-2">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                        <path d="M2 12h20" />
+                    </svg>
                     <!-- SW_DE --><!-- END_SW_DE -->
                     <!-- SW_EN --><!-- END_SW_EN -->
                 </div>
-                <a href="#kontakt" class="bg-primary hover:bg-primary-hover text-white px-5 py-2 rounded-none transition-colors text-xs font-bold uppercase tracking-widest hidden sm:inline-block theme-btn-primary">
+                <a href="#kontakt"
+                    class="bg-primary hover:bg-primary-hover text-white px-5 py-2 rounded-none transition-colors text-xs font-bold uppercase tracking-widest hidden sm:inline-block theme-btn-primary">
                     {{ nav_contact }}
                 </a>
-                
+
                 <!-- Mobile Kontakt (Icon only or smaller on very small screens if needed, but we can just show it) -->
-                <a href="#kontakt" class="sm:hidden bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-none transition-colors text-xs font-bold uppercase tracking-widest theme-btn-primary">
+                <a href="#kontakt"
+                    class="sm:hidden bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-none transition-colors text-xs font-bold uppercase tracking-widest theme-btn-primary">
                     {{ nav_contact }}
                 </a>
 
                 <!-- Mobile Menu Toggle -->
-                <button id="mobile-menu-btn" class="sm:hidden nav-link p-2 -mr-2 transition-colors flex items-center justify-center relative cursor-pointer z-50 hover:opacity-70" aria-label="Menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                <button id="mobile-menu-btn"
+                    class="sm:hidden nav-link p-2 -mr-2 transition-colors flex items-center justify-center relative cursor-pointer z-50 hover:opacity-70"
+                    aria-label="Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="nav-icon">
+                        <line x1="4" x2="20" y1="12" y2="12" />
+                        <line x1="4" x2="20" y1="6" y2="6" />
+                        <line x1="4" x2="20" y1="18" y2="18" />
+                    </svg>
                 </button>
             </div>
         </div>
     </nav>
 
     <!-- MOBILE OVERLAY MENU -->
-    <div id="mobile-menu" class="fixed inset-0 z-40 theme-mobile-menu backdrop-blur-xl flex flex-col pt-24 px-6 pb-6 transform translate-x-full transition-transform duration-300 ease-in-out sm:hidden">
+    <div id="mobile-menu"
+        class="fixed inset-0 z-40 theme-mobile-menu backdrop-blur-xl flex flex-col pt-24 px-6 pb-6 transform translate-x-full transition-transform duration-300 ease-in-out sm:hidden">
         <nav class="flex flex-col gap-6 text-xl font-bold uppercase tracking-widest">
-            <a href="https://schnorpfeil.eu/karriere/" target="_blank" rel="noopener" class="flex items-center justify-between w-full border-b pb-4 theme-heading" style="border-color: var(--theme-divider)">
+            <a href="https://schnorpfeil.eu/karriere/" target="_blank" rel="noopener"
+                class="flex items-center justify-between w-full border-b pb-4 theme-heading"
+                style="border-color: var(--theme-divider)">
                 <span>{{ nav_career }}</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="theme-text-muted"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                    class="theme-text-muted">
+                    <path d="M7 7h10v10" />
+                    <path d="M7 17 17 7" />
+                </svg>
             </a>
-            
+
             <!-- Mobile i18n switcher -->
-            <div class="flex items-center justify-between w-full border-b pb-4" style="border-color: var(--theme-divider)">
+            <div class="flex items-center justify-between w-full border-b pb-4"
+                style="border-color: var(--theme-divider)">
                 <div class="flex items-center gap-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-text-muted"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="theme-text-muted">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                        <path d="M2 12h20" />
+                    </svg>
                     <span class="theme-text-muted text-sm">{{ mobile_language_label }}</span>
                 </div>
                 <div class="flex gap-4 theme-heading">
@@ -234,13 +302,35 @@
             </div>
 
             <!-- Mobile theme toggle -->
-            <button id="theme-toggle-mobile" class="flex items-center justify-between w-full border-b pb-4 cursor-pointer" style="border-color: var(--theme-divider)">
+            <button id="theme-toggle-mobile"
+                class="flex items-center justify-between w-full border-b pb-4 cursor-pointer"
+                style="border-color: var(--theme-divider)">
                 <div class="flex items-center gap-3">
-                    <svg id="mobile-theme-icon-hat" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-text-muted"><path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2z"/><path d="M10 15V7a2 2 0 0 1 2-2v0a2 2 0 0 1 2 2v8"/><path d="M6 15v-2a6 6 0 0 1 12 0v2"/></svg>
-                    <svg id="mobile-theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-text-muted hidden"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-                    <span class="theme-text-muted text-sm normal-case tracking-normal font-normal">{{ theme_toggle_label }}</span>
+                    <svg id="mobile-theme-icon-hat" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="theme-text-muted">
+                        <path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2z" />
+                        <path d="M10 15V7a2 2 0 0 1 2-2v0a2 2 0 0 1 2 2v8" />
+                        <path d="M6 15v-2a6 6 0 0 1 12 0v2" />
+                    </svg>
+                    <svg id="mobile-theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="theme-text-muted hidden">
+                        <circle cx="12" cy="12" r="4" />
+                        <path d="M12 2v2" />
+                        <path d="M12 20v2" />
+                        <path d="m4.93 4.93 1.41 1.41" />
+                        <path d="m17.66 17.66 1.41 1.41" />
+                        <path d="M2 12h2" />
+                        <path d="M20 12h2" />
+                        <path d="m6.34 17.66-1.41 1.41" />
+                        <path d="m19.07 4.93-1.41 1.41" />
+                    </svg>
+                    <span class="theme-text-muted text-sm normal-case tracking-normal font-normal">{{ theme_toggle_label
+                        }}</span>
                 </div>
-                <div id="mobile-theme-status" class="theme-heading text-sm font-bold" data-on="{{ toggle_on }}" data-off="{{ toggle_off }}">{{ toggle_off }}</div>
+                <div id="mobile-theme-status" class="theme-heading text-sm font-bold" data-on="{{ toggle_on }}"
+                    data-off="{{ toggle_off }}">{{ toggle_off }}</div>
             </button>
         </nav>
     </div>
@@ -251,42 +341,69 @@
             <!-- Full Background Image -->
             <div class="absolute inset-0 z-0 js-hero-zoom" data-parallax="0.3" data-parallax-dir="1">
                 <img src="/images/hero-header.webp" alt="{{ hero_img_alt }}" class="w-full h-full object-cover" />
-                <div class="absolute inset-0 bg-primary/[0.08] hero-overlay"></div>
+                <div class="absolute inset-0 bg-primary/[0.12] hero-overlay"></div>
             </div>
 
-            <div class="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col justify-start pt-[18vh] md:justify-end md:pb-[12vh]" data-parallax="0.2" data-parallax-dir="-1">
+            <div class="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col justify-start pt-[18vh] md:justify-end md:pb-[12vh]"
+                data-parallax="0.2" data-parallax-dir="-1">
                 <div class="max-w-xl lg:max-w-2xl js-hero-fade-up">
-                    <h1 class="text-5xl sm:text-6xl lg:text-8xl font-black text-white tracking-tighter uppercase leading-[0.95] drop-shadow-lg">
+                    <h1
+                        class="text-5xl sm:text-6xl lg:text-8xl font-black text-white tracking-tighter uppercase leading-[0.95] drop-shadow-lg">
                         {{ hero_title }}
                     </h1>
-                    
-                    <p class="mt-6 md:mt-8 inline-block bg-primary/80 text-white px-4 py-2 text-base md:text-lg font-semibold tracking-wide drop-shadow rounded-none hero-subtitle">
+
+                    <p
+                        class="mt-6 md:mt-8 inline-block bg-primary/80 text-white px-4 py-2 text-base md:text-lg font-semibold tracking-wide drop-shadow rounded-none hero-subtitle">
                         {{ hero_subtitle }}
                     </p>
 
                     <!-- Stats Bar -->
-                    <div class="mt-8 md:mt-14 grid grid-cols-3 bg-white/80 p-5 md:p-8 shadow-md rounded-none js-hero-fade-up-delay hero-stats">
+                    <div
+                        class="mt-8 md:mt-14 grid grid-cols-3 bg-white/80 p-5 md:p-8 shadow-md rounded-none js-hero-fade-up-delay hero-stats">
                         <div class="flex flex-col items-center text-center">
-                            <span class="text-2xl sm:text-4xl lg:text-5xl font-black text-primary theme-stat-number tracking-tight" data-counter="75" data-suffix="+" style="font-variant-numeric: tabular-nums;">0+</span>
-                            <span class="text-[0.55rem] sm:text-[0.65rem] uppercase tracking-[0.1em] text-slate-500 mt-1 font-bold hero-stat-label">{{ stat_years_label }}</span>
+                            <span
+                                class="text-2xl sm:text-4xl lg:text-5xl font-black text-primary theme-stat-number tracking-tight"
+                                data-counter="75" data-suffix="+" style="font-variant-numeric: tabular-nums;">0+</span>
+                            <span
+                                class="text-[0.55rem] sm:text-[0.65rem] uppercase tracking-[0.1em] text-slate-500 mt-1 font-bold hero-stat-label">{{
+                                stat_years_label }}</span>
                         </div>
                         <div class="flex flex-col items-center text-center">
-                            <span class="text-2xl sm:text-4xl lg:text-5xl font-black text-primary theme-stat-number tracking-tight" data-counter="1000" data-suffix="+" style="font-variant-numeric: tabular-nums;">0+</span>
-                            <span class="text-[0.55rem] sm:text-[0.65rem] uppercase tracking-[0.1em] text-slate-500 mt-1 font-bold hero-stat-label">{{ stat_emp_label }}</span>
+                            <span
+                                class="text-2xl sm:text-4xl lg:text-5xl font-black text-primary theme-stat-number tracking-tight"
+                                data-counter="1000" data-suffix="+"
+                                style="font-variant-numeric: tabular-nums;">0+</span>
+                            <span
+                                class="text-[0.55rem] sm:text-[0.65rem] uppercase tracking-[0.1em] text-slate-500 mt-1 font-bold hero-stat-label">{{
+                                stat_emp_label }}</span>
                         </div>
                         <div class="flex flex-col items-center text-center">
-                            <span class="text-2xl sm:text-4xl lg:text-5xl font-black text-primary theme-stat-number tracking-tight" data-counter="10000" data-suffix="+" style="font-variant-numeric: tabular-nums;">0+</span>
-                            <span class="text-[0.55rem] sm:text-[0.65rem] uppercase tracking-[0.1em] text-slate-500 mt-1 font-bold hero-stat-label">{{ stat_proj_label }}</span>
+                            <span
+                                class="text-2xl sm:text-4xl lg:text-5xl font-black text-primary theme-stat-number tracking-tight"
+                                data-counter="10000" data-suffix="+"
+                                style="font-variant-numeric: tabular-nums;">0+</span>
+                            <span
+                                class="text-[0.55rem] sm:text-[0.65rem] uppercase tracking-[0.1em] text-slate-500 mt-1 font-bold hero-stat-label">{{
+                                stat_proj_label }}</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Scroll Down Indicator -->
-            <button id="hero-scroll-btn" class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 js-hero-fade-up-delay group cursor-pointer" aria-label="Scroll down">
-                <div class="relative flex items-center justify-center w-11 h-11 border border-white/50 group-hover:border-white transition-colors duration-300 overflow-hidden">
-                    <div class="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 z-0"></div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="relative z-10 text-white group-hover:text-primary transition-colors duration-300 drop-shadow-md"><path d="m6 9 6 6 6-6"/></svg>
+            <button id="hero-scroll-btn"
+                class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 js-hero-fade-up-delay group cursor-pointer"
+                aria-label="Scroll down">
+                <div
+                    class="relative flex items-center justify-center w-11 h-11 border border-white/50 group-hover:border-white transition-colors duration-300 overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 z-0">
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                        class="relative z-10 text-white group-hover:text-primary transition-colors duration-300 drop-shadow-md">
+                        <path d="m6 9 6 6 6-6" />
+                    </svg>
                 </div>
             </button>
         </section>
@@ -296,8 +413,23 @@
             <div class="max-w-7xl mx-auto px-6">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                     <div class="flex flex-col group js-reveal">
-                        <div class="h-12 w-12 theme-icon-box flex items-center justify-center text-primary mb-6 transition-colors duration-300 rounded-none">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cpu group-hover:scale-110 transition-transform"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+                        <div
+                            class="h-12 w-12 theme-icon-box flex items-center justify-center text-primary mb-6 transition-colors duration-300 rounded-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-cpu group-hover:scale-110 transition-transform">
+                                <rect width="16" height="16" x="4" y="4" rx="2" />
+                                <rect width="6" height="6" x="9" y="9" rx="1" />
+                                <path d="M15 2v2" />
+                                <path d="M15 20v2" />
+                                <path d="M2 15h2" />
+                                <path d="M2 9h2" />
+                                <path d="M20 15h2" />
+                                <path d="M20 9h2" />
+                                <path d="M9 2v2" />
+                                <path d="M9 20v2" />
+                            </svg>
                         </div>
                         <h3 class="text-lg font-bold theme-heading uppercase tracking-wide mb-3">{{ vp_1_title }}</h3>
                         <p class="theme-text-muted leading-relaxed text-sm flex-grow font-normal">
@@ -305,8 +437,18 @@
                         </p>
                     </div>
                     <div class="flex flex-col group js-reveal" style="transition-delay: 100ms">
-                        <div class="h-12 w-12 theme-icon-box flex items-center justify-center text-primary mb-6 transition-colors duration-300 rounded-none">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-crosshair group-hover:scale-110 transition-transform"><circle cx="12" cy="12" r="10"/><line x1="22" x2="18" y1="12" y2="12"/><line x1="6" x2="2" y1="12" y2="12"/><line x1="12" x2="12" y1="6" y2="2"/><line x1="12" x2="12" y1="22" y2="18"/></svg>
+                        <div
+                            class="h-12 w-12 theme-icon-box flex items-center justify-center text-primary mb-6 transition-colors duration-300 rounded-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-crosshair group-hover:scale-110 transition-transform">
+                                <circle cx="12" cy="12" r="10" />
+                                <line x1="22" x2="18" y1="12" y2="12" />
+                                <line x1="6" x2="2" y1="12" y2="12" />
+                                <line x1="12" x2="12" y1="6" y2="2" />
+                                <line x1="12" x2="12" y1="22" y2="18" />
+                            </svg>
                         </div>
                         <h3 class="text-lg font-bold theme-heading uppercase tracking-wide mb-3">{{ vp_2_title }}</h3>
                         <p class="theme-text-muted leading-relaxed text-sm flex-grow font-normal">
@@ -314,8 +456,16 @@
                         </p>
                     </div>
                     <div class="flex flex-col group js-reveal" style="transition-delay: 200ms">
-                        <div class="h-12 w-12 theme-icon-box flex items-center justify-center text-primary mb-6 transition-colors duration-300 rounded-none">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check group-hover:scale-110 transition-transform"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+                        <div
+                            class="h-12 w-12 theme-icon-box flex items-center justify-center text-primary mb-6 transition-colors duration-300 rounded-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-shield-check group-hover:scale-110 transition-transform">
+                                <path
+                                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z" />
+                                <path d="m9 12 2 2 4-4" />
+                            </svg>
                         </div>
                         <h3 class="text-lg font-bold theme-heading uppercase tracking-wide mb-3">{{ vp_3_title }}</h3>
                         <p class="theme-text-muted leading-relaxed text-sm flex-grow font-normal">
@@ -341,169 +491,356 @@
                 <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
 
                     <!-- V4 Exact Card Blueprint: Rigidity, Pure Alignment, Saturated Color -->
-                    <div class="js-reveal group flex flex-col theme-card border rounded-none shadow-sm relative overflow-hidden focus:outline-none focus:border-primary">
-                        <div class="absolute left-0 bottom-0 h-[2px] w-0 bg-primary card-progress-bar group-hover:w-full transition-all duration-500 ease-in-out"></div>
+                    <div
+                        class="js-reveal group flex flex-col theme-card border rounded-none shadow-sm relative overflow-hidden focus:outline-none focus:border-primary">
+                        <div
+                            class="absolute left-0 bottom-0 h-[2px] w-0 bg-primary card-progress-bar group-hover:w-full transition-all duration-500 ease-in-out">
+                        </div>
                         <div class="p-4 md:p-8 md:pt-10 flex-grow flex flex-col">
                             <!-- Logo Container -->
-                            <div class="h-8 md:h-12 w-full flex items-center justify-center md:justify-start mb-3 md:mb-8 relative">
-                                <img src="/logos/Schnorpfeil.svg" alt="Heinz Schnorpfeil Bau GmbH" class="h-full w-auto max-w-full object-contain object-center md:object-left" />
+                            <div
+                                class="h-8 md:h-12 w-full flex items-center justify-center md:justify-start mb-3 md:mb-8 relative">
+                                <img src="/logos/Schnorpfeil.svg" alt="Heinz Schnorpfeil Bau GmbH"
+                                    class="h-full w-auto max-w-full object-contain object-center md:object-left" />
                             </div>
-                            <div class="h-px w-8 theme-divider-line mb-2 md:mb-6 group-hover:bg-primary transition-colors duration-300 mx-auto md:mx-0"></div>
-                            <p class="theme-text-muted font-medium text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-none text-center md:text-left">{{ sub1_desc }}</p>
+                            <div
+                                class="h-px w-8 theme-divider-line mb-2 md:mb-6 group-hover:bg-primary transition-colors duration-300 mx-auto md:mx-0">
+                            </div>
+                            <p
+                                class="theme-text-muted font-medium text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-none text-center md:text-left">
+                                {{ sub1_desc }}</p>
                         </div>
                         <div class="px-4 pb-2 md:px-8 md:pb-8 flex items-center justify-between mt-auto">
-                            <a href="https://www.schnorpfeil.eu/" target="_blank" rel="noopener" class="stretched-link text-primary font-bold text-[0.65rem] uppercase tracking-widest hover:text-slate-900 transition-colors hidden md:inline">{{ hub_cta }}</a>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-300 group-hover:text-primary transition-colors hidden md:block card-arrow"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                            <a href="https://www.schnorpfeil.eu/" target="_blank" rel="noopener"
+                                class="stretched-link text-primary font-bold text-[0.65rem] uppercase tracking-widest hover:text-slate-900 transition-colors hidden md:inline">{{
+                                hub_cta }}</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="text-slate-300 group-hover:text-primary transition-colors hidden md:block card-arrow">
+                                <path d="M7 7h10v10" />
+                                <path d="M7 17 17 7" />
+                            </svg>
                         </div>
                     </div>
 
-                    <div class="js-reveal group flex flex-col theme-card border rounded-none shadow-sm relative overflow-hidden focus:outline-none focus:border-primary" style="transition-delay: 50ms">
-                         <div class="absolute left-0 bottom-0 h-[2px] w-0 bg-primary card-progress-bar group-hover:w-full transition-all duration-500 ease-in-out"></div>
-                         <div class="p-4 md:p-8 md:pt-10 flex-grow flex flex-col">
-                            <div class="h-8 md:h-12 w-full flex items-center justify-center md:justify-start mb-3 md:mb-8 relative">
-                                <img src="/logos/Wallstop.svg" alt="WALLSTOP" class="h-full w-auto max-w-full object-contain object-center md:object-left" />
+                    <div class="js-reveal group flex flex-col theme-card border rounded-none shadow-sm relative overflow-hidden focus:outline-none focus:border-primary"
+                        style="transition-delay: 50ms">
+                        <div
+                            class="absolute left-0 bottom-0 h-[2px] w-0 bg-primary card-progress-bar group-hover:w-full transition-all duration-500 ease-in-out">
+                        </div>
+                        <div class="p-4 md:p-8 md:pt-10 flex-grow flex flex-col">
+                            <div
+                                class="h-8 md:h-12 w-full flex items-center justify-center md:justify-start mb-3 md:mb-8 relative">
+                                <img src="/logos/Wallstop.svg" alt="WALLSTOP"
+                                    class="h-full w-auto max-w-full object-contain object-center md:object-left" />
                             </div>
-                            <div class="h-px w-8 theme-divider-line mb-2 md:mb-6 group-hover:bg-primary transition-colors duration-300 mx-auto md:mx-0"></div>
-                            <p class="theme-text-muted font-medium text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-none text-center md:text-left">{{ sub2_desc }}</p>
+                            <div
+                                class="h-px w-8 theme-divider-line mb-2 md:mb-6 group-hover:bg-primary transition-colors duration-300 mx-auto md:mx-0">
+                            </div>
+                            <p
+                                class="theme-text-muted font-medium text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-none text-center md:text-left">
+                                {{ sub2_desc }}</p>
                         </div>
                         <div class="px-4 pb-2 md:px-8 md:pb-8 flex items-center justify-between mt-auto">
-                            <a href="https://www.wallstop.de/" target="_blank" rel="noopener" class="stretched-link text-primary font-bold text-[0.65rem] uppercase tracking-widest hover:text-slate-900 transition-colors hidden md:inline">{{ hub_cta }}</a>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-300 group-hover:text-primary transition-colors hidden md:block card-arrow"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                            <a href="https://www.wallstop.de/" target="_blank" rel="noopener"
+                                class="stretched-link text-primary font-bold text-[0.65rem] uppercase tracking-widest hover:text-slate-900 transition-colors hidden md:inline">{{
+                                hub_cta }}</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="text-slate-300 group-hover:text-primary transition-colors hidden md:block card-arrow">
+                                <path d="M7 7h10v10" />
+                                <path d="M7 17 17 7" />
+                            </svg>
                         </div>
                     </div>
 
-                    <div class="js-reveal group flex flex-col theme-card border rounded-none shadow-sm relative overflow-hidden focus:outline-none focus:border-primary" style="transition-delay: 100ms">
-                         <div class="absolute left-0 bottom-0 h-[2px] w-0 bg-primary card-progress-bar group-hover:w-full transition-all duration-500 ease-in-out"></div>
-                         <div class="p-4 md:p-8 md:pt-10 flex-grow flex flex-col">
-                            <div class="h-8 md:h-12 w-full flex items-center justify-center md:justify-start mb-3 md:mb-8 relative">
-                                <img src="/logos/Schnorpfeil Rhein-Main.svg" alt="Schnorpfeil Rhein-Main" class="h-full w-auto max-w-full object-contain object-center md:object-left" />
+                    <div class="js-reveal group flex flex-col theme-card border rounded-none shadow-sm relative overflow-hidden focus:outline-none focus:border-primary"
+                        style="transition-delay: 100ms">
+                        <div
+                            class="absolute left-0 bottom-0 h-[2px] w-0 bg-primary card-progress-bar group-hover:w-full transition-all duration-500 ease-in-out">
+                        </div>
+                        <div class="p-4 md:p-8 md:pt-10 flex-grow flex flex-col">
+                            <div
+                                class="h-8 md:h-12 w-full flex items-center justify-center md:justify-start mb-3 md:mb-8 relative">
+                                <img src="/logos/Schnorpfeil Rhein-Main.svg" alt="Schnorpfeil Rhein-Main"
+                                    class="h-full w-auto max-w-full object-contain object-center md:object-left" />
                             </div>
-                            <div class="h-px w-8 theme-divider-line mb-2 md:mb-6 group-hover:bg-primary transition-colors duration-300 mx-auto md:mx-0"></div>
-                            <p class="theme-text-muted font-medium text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-none text-center md:text-left">{{ sub3_desc }}</p>
+                            <div
+                                class="h-px w-8 theme-divider-line mb-2 md:mb-6 group-hover:bg-primary transition-colors duration-300 mx-auto md:mx-0">
+                            </div>
+                            <p
+                                class="theme-text-muted font-medium text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-none text-center md:text-left">
+                                {{ sub3_desc }}</p>
                         </div>
                         <div class="px-4 pb-2 md:px-8 md:pb-8 flex items-center justify-between mt-auto">
-                            <a href="https://schnorpfeil-rhein-main.com/" target="_blank" rel="noopener" class="stretched-link text-primary font-bold text-[0.65rem] uppercase tracking-widest hover:text-slate-900 transition-colors hidden md:inline">{{ hub_cta }}</a>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-300 group-hover:text-primary transition-colors hidden md:block card-arrow"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                            <a href="https://schnorpfeil-rhein-main.com/" target="_blank" rel="noopener"
+                                class="stretched-link text-primary font-bold text-[0.65rem] uppercase tracking-widest hover:text-slate-900 transition-colors hidden md:inline">{{
+                                hub_cta }}</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="text-slate-300 group-hover:text-primary transition-colors hidden md:block card-arrow">
+                                <path d="M7 7h10v10" />
+                                <path d="M7 17 17 7" />
+                            </svg>
                         </div>
                     </div>
 
-                    <div class="js-reveal group flex flex-col theme-card border rounded-none shadow-sm relative overflow-hidden focus:outline-none focus:border-primary" style="transition-delay: 150ms">
-                         <div class="absolute left-0 bottom-0 h-[2px] w-0 bg-primary card-progress-bar group-hover:w-full transition-all duration-500 ease-in-out"></div>
-                         <div class="p-4 md:p-8 md:pt-10 flex-grow flex flex-col">
-                            <div class="h-8 md:h-12 w-full flex items-center justify-center md:justify-start mb-3 md:mb-8 relative">
-                                <img src="/logos/Mosel Grauwacke.svg" alt="Mosel Grauwacke" class="h-full w-auto max-w-full object-contain object-center md:object-left" />
+                    <div class="js-reveal group flex flex-col theme-card border rounded-none shadow-sm relative overflow-hidden focus:outline-none focus:border-primary"
+                        style="transition-delay: 150ms">
+                        <div
+                            class="absolute left-0 bottom-0 h-[2px] w-0 bg-primary card-progress-bar group-hover:w-full transition-all duration-500 ease-in-out">
+                        </div>
+                        <div class="p-4 md:p-8 md:pt-10 flex-grow flex flex-col">
+                            <div
+                                class="h-8 md:h-12 w-full flex items-center justify-center md:justify-start mb-3 md:mb-8 relative">
+                                <img src="/logos/Mosel Grauwacke.svg" alt="Mosel Grauwacke"
+                                    class="h-full w-auto max-w-full object-contain object-center md:object-left" />
                             </div>
-                            <div class="h-px w-8 theme-divider-line mb-2 md:mb-6 group-hover:bg-primary transition-colors duration-300 mx-auto md:mx-0"></div>
-                            <p class="theme-text-muted font-medium text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-none text-center md:text-left">{{ sub4_desc }}</p>
+                            <div
+                                class="h-px w-8 theme-divider-line mb-2 md:mb-6 group-hover:bg-primary transition-colors duration-300 mx-auto md:mx-0">
+                            </div>
+                            <p
+                                class="theme-text-muted font-medium text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-none text-center md:text-left">
+                                {{ sub4_desc }}</p>
                         </div>
                         <div class="px-4 pb-2 md:px-8 md:pb-8 flex items-center justify-between mt-auto">
-                            <a href="https://moselgrauwacke.de/" target="_blank" rel="noopener" class="stretched-link text-primary font-bold text-[0.65rem] uppercase tracking-widest hover:text-slate-900 transition-colors hidden md:inline">{{ hub_cta }}</a>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-300 group-hover:text-primary transition-colors hidden md:block card-arrow"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                            <a href="https://moselgrauwacke.de/" target="_blank" rel="noopener"
+                                class="stretched-link text-primary font-bold text-[0.65rem] uppercase tracking-widest hover:text-slate-900 transition-colors hidden md:inline">{{
+                                hub_cta }}</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="text-slate-300 group-hover:text-primary transition-colors hidden md:block card-arrow">
+                                <path d="M7 7h10v10" />
+                                <path d="M7 17 17 7" />
+                            </svg>
                         </div>
                     </div>
 
-                    <div class="js-reveal group flex flex-col theme-card border rounded-none shadow-sm relative overflow-hidden focus:outline-none focus:border-primary" style="transition-delay: 200ms">
-                         <div class="absolute left-0 bottom-0 h-[2px] w-0 bg-primary card-progress-bar group-hover:w-full transition-all duration-500 ease-in-out"></div>
-                         <div class="p-4 md:p-8 md:pt-10 flex-grow flex flex-col">
-                            <div class="h-8 md:h-12 w-full flex items-center justify-center md:justify-start mb-3 md:mb-8 relative">
-                                <img src="/logos/Linetech.svg" alt="Linetech" class="h-full w-auto max-w-full object-contain object-center md:object-left" />
+                    <div class="js-reveal group flex flex-col theme-card border rounded-none shadow-sm relative overflow-hidden focus:outline-none focus:border-primary"
+                        style="transition-delay: 200ms">
+                        <div
+                            class="absolute left-0 bottom-0 h-[2px] w-0 bg-primary card-progress-bar group-hover:w-full transition-all duration-500 ease-in-out">
+                        </div>
+                        <div class="p-4 md:p-8 md:pt-10 flex-grow flex flex-col">
+                            <div
+                                class="h-8 md:h-12 w-full flex items-center justify-center md:justify-start mb-3 md:mb-8 relative">
+                                <img src="/logos/Linetech.svg" alt="Linetech"
+                                    class="h-full w-auto max-w-full object-contain object-center md:object-left" />
                             </div>
-                            <div class="h-px w-8 theme-divider-line mb-2 md:mb-6 group-hover:bg-primary transition-colors duration-300 mx-auto md:mx-0"></div>
-                            <p class="theme-text-muted font-medium text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-none text-center md:text-left">{{ sub5_desc }}</p>
+                            <div
+                                class="h-px w-8 theme-divider-line mb-2 md:mb-6 group-hover:bg-primary transition-colors duration-300 mx-auto md:mx-0">
+                            </div>
+                            <p
+                                class="theme-text-muted font-medium text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-none text-center md:text-left">
+                                {{ sub5_desc }}</p>
                         </div>
                         <div class="px-4 pb-2 md:px-8 md:pb-8 flex items-center justify-between mt-auto">
-                            <a href="https://linetech.de/" target="_blank" rel="noopener" class="stretched-link text-primary font-bold text-[0.65rem] uppercase tracking-widest hover:text-slate-900 transition-colors hidden md:inline">{{ hub_cta }}</a>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-300 group-hover:text-primary transition-colors hidden md:block card-arrow"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                            <a href="https://linetech.de/" target="_blank" rel="noopener"
+                                class="stretched-link text-primary font-bold text-[0.65rem] uppercase tracking-widest hover:text-slate-900 transition-colors hidden md:inline">{{
+                                hub_cta }}</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="text-slate-300 group-hover:text-primary transition-colors hidden md:block card-arrow">
+                                <path d="M7 7h10v10" />
+                                <path d="M7 17 17 7" />
+                            </svg>
                         </div>
                     </div>
 
-                    <div class="js-reveal group flex flex-col theme-card border rounded-none shadow-sm relative overflow-hidden focus:outline-none focus:border-primary" style="transition-delay: 250ms">
-                         <div class="absolute left-0 bottom-0 h-[2px] w-0 bg-primary card-progress-bar group-hover:w-full transition-all duration-500 ease-in-out"></div>
-                         <div class="p-4 md:p-8 md:pt-10 flex-grow flex flex-col">
-                            <div class="h-8 md:h-12 w-full flex items-center justify-center md:justify-start mb-3 md:mb-8 relative">
-                                <img src="/logos/Benkelberg.svg" alt="Benkelberg" class="h-full w-auto max-w-full object-contain object-center md:object-left" />
+                    <div class="js-reveal group flex flex-col theme-card border rounded-none shadow-sm relative overflow-hidden focus:outline-none focus:border-primary"
+                        style="transition-delay: 250ms">
+                        <div
+                            class="absolute left-0 bottom-0 h-[2px] w-0 bg-primary card-progress-bar group-hover:w-full transition-all duration-500 ease-in-out">
+                        </div>
+                        <div class="p-4 md:p-8 md:pt-10 flex-grow flex flex-col">
+                            <div
+                                class="h-8 md:h-12 w-full flex items-center justify-center md:justify-start mb-3 md:mb-8 relative">
+                                <img src="/logos/Benkelberg.svg" alt="Benkelberg"
+                                    class="h-full w-auto max-w-full object-contain object-center md:object-left" />
                             </div>
-                            <div class="h-px w-8 theme-divider-line mb-2 md:mb-6 group-hover:bg-primary transition-colors duration-300 mx-auto md:mx-0"></div>
-                            <p class="theme-text-muted font-medium text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-none text-center md:text-left">{{ sub6_desc }}</p>
+                            <div
+                                class="h-px w-8 theme-divider-line mb-2 md:mb-6 group-hover:bg-primary transition-colors duration-300 mx-auto md:mx-0">
+                            </div>
+                            <p
+                                class="theme-text-muted font-medium text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-none text-center md:text-left">
+                                {{ sub6_desc }}</p>
                         </div>
                         <div class="px-4 pb-2 md:px-8 md:pb-8 flex items-center justify-between mt-auto">
-                            <a href="https://bauschuttdeponie.com/" target="_blank" rel="noopener" class="stretched-link text-primary font-bold text-[0.65rem] uppercase tracking-widest hover:text-slate-900 transition-colors hidden md:inline">{{ hub_cta }}</a>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-300 group-hover:text-primary transition-colors hidden md:block card-arrow"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                            <a href="https://bauschuttdeponie.com/" target="_blank" rel="noopener"
+                                class="stretched-link text-primary font-bold text-[0.65rem] uppercase tracking-widest hover:text-slate-900 transition-colors hidden md:inline">{{
+                                hub_cta }}</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="text-slate-300 group-hover:text-primary transition-colors hidden md:block card-arrow">
+                                <path d="M7 7h10v10" />
+                                <path d="M7 17 17 7" />
+                            </svg>
                         </div>
                     </div>
 
-                    <div class="js-reveal group flex flex-col theme-card border rounded-none shadow-sm relative overflow-hidden focus:outline-none focus:border-primary" style="transition-delay: 0ms">
-                         <div class="absolute left-0 bottom-0 h-[2px] w-0 bg-primary card-progress-bar group-hover:w-full transition-all duration-500 ease-in-out"></div>
-                         <div class="p-4 md:p-8 md:pt-10 flex-grow flex flex-col">
-                            <div class="h-8 md:h-12 w-full flex items-center justify-center md:justify-start mb-3 md:mb-8 relative">
-                                <img src="/logos/HSK.svg" alt="HSK" class="h-full w-auto max-w-full object-contain object-center md:object-left" />
+                    <div class="js-reveal group flex flex-col theme-card border rounded-none shadow-sm relative overflow-hidden focus:outline-none focus:border-primary"
+                        style="transition-delay: 0ms">
+                        <div
+                            class="absolute left-0 bottom-0 h-[2px] w-0 bg-primary card-progress-bar group-hover:w-full transition-all duration-500 ease-in-out">
+                        </div>
+                        <div class="p-4 md:p-8 md:pt-10 flex-grow flex flex-col">
+                            <div
+                                class="h-8 md:h-12 w-full flex items-center justify-center md:justify-start mb-3 md:mb-8 relative">
+                                <img src="/logos/HSK.svg" alt="HSK"
+                                    class="h-full w-auto max-w-full object-contain object-center md:object-left" />
                             </div>
-                            <div class="h-px w-8 theme-divider-line mb-2 md:mb-6 group-hover:bg-primary transition-colors duration-300 mx-auto md:mx-0"></div>
-                            <p class="theme-text-muted font-medium text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-none text-center md:text-left">{{ sub7_desc }}</p>
+                            <div
+                                class="h-px w-8 theme-divider-line mb-2 md:mb-6 group-hover:bg-primary transition-colors duration-300 mx-auto md:mx-0">
+                            </div>
+                            <p
+                                class="theme-text-muted font-medium text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-none text-center md:text-left">
+                                {{ sub7_desc }}</p>
                         </div>
                         <div class="px-4 pb-2 md:px-8 md:pb-8 flex items-center justify-between mt-auto">
-                            <a href="https://hsk-fugen.de/" target="_blank" rel="noopener" class="stretched-link text-primary font-bold text-[0.65rem] uppercase tracking-widest hover:text-slate-900 transition-colors hidden md:inline">{{ hub_cta }}</a>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-300 group-hover:text-primary transition-colors hidden md:block card-arrow"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                            <a href="https://hsk-fugen.de/" target="_blank" rel="noopener"
+                                class="stretched-link text-primary font-bold text-[0.65rem] uppercase tracking-widest hover:text-slate-900 transition-colors hidden md:inline">{{
+                                hub_cta }}</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="text-slate-300 group-hover:text-primary transition-colors hidden md:block card-arrow">
+                                <path d="M7 7h10v10" />
+                                <path d="M7 17 17 7" />
+                            </svg>
                         </div>
                     </div>
 
-                    <div class="js-reveal group flex flex-col theme-card border rounded-none shadow-sm relative overflow-hidden focus:outline-none focus:border-primary" style="transition-delay: 50ms">
-                         <div class="absolute left-0 bottom-0 h-[2px] w-0 bg-primary card-progress-bar group-hover:w-full transition-all duration-500 ease-in-out"></div>
-                         <div class="p-4 md:p-8 md:pt-10 flex-grow flex flex-col">
-                            <div class="h-8 md:h-12 w-full flex items-center justify-center md:justify-start mb-3 md:mb-8 relative">
-                                <img src="/logos/Infraline.svg" alt="Infraline" class="h-full w-auto max-w-full object-contain object-center md:object-left" />
+                    <div class="js-reveal group flex flex-col theme-card border rounded-none shadow-sm relative overflow-hidden focus:outline-none focus:border-primary"
+                        style="transition-delay: 50ms">
+                        <div
+                            class="absolute left-0 bottom-0 h-[2px] w-0 bg-primary card-progress-bar group-hover:w-full transition-all duration-500 ease-in-out">
+                        </div>
+                        <div class="p-4 md:p-8 md:pt-10 flex-grow flex flex-col">
+                            <div
+                                class="h-8 md:h-12 w-full flex items-center justify-center md:justify-start mb-3 md:mb-8 relative">
+                                <img src="/logos/Infraline.svg" alt="Infraline"
+                                    class="h-full w-auto max-w-full object-contain object-center md:object-left" />
                             </div>
-                            <div class="h-px w-8 theme-divider-line mb-2 md:mb-6 group-hover:bg-primary transition-colors duration-300 mx-auto md:mx-0"></div>
-                            <p class="theme-text-muted font-medium text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-none text-center md:text-left">{{ sub8_desc }}</p>
+                            <div
+                                class="h-px w-8 theme-divider-line mb-2 md:mb-6 group-hover:bg-primary transition-colors duration-300 mx-auto md:mx-0">
+                            </div>
+                            <p
+                                class="theme-text-muted font-medium text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-none text-center md:text-left">
+                                {{ sub8_desc }}</p>
                         </div>
                         <div class="px-4 pb-2 md:px-8 md:pb-8 flex items-center justify-between mt-auto">
-                            <a href="https://infraline.de/" target="_blank" rel="noopener" class="stretched-link text-primary font-bold text-[0.65rem] uppercase tracking-widest hover:text-slate-900 transition-colors hidden md:inline">{{ hub_cta }}</a>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-300 group-hover:text-primary transition-colors hidden md:block card-arrow"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                            <a href="https://infraline.de/" target="_blank" rel="noopener"
+                                class="stretched-link text-primary font-bold text-[0.65rem] uppercase tracking-widest hover:text-slate-900 transition-colors hidden md:inline">{{
+                                hub_cta }}</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="text-slate-300 group-hover:text-primary transition-colors hidden md:block card-arrow">
+                                <path d="M7 7h10v10" />
+                                <path d="M7 17 17 7" />
+                            </svg>
                         </div>
                     </div>
 
-                    <div class="js-reveal group flex flex-col theme-card border rounded-none shadow-sm relative overflow-hidden focus:outline-none focus:border-primary" style="transition-delay: 100ms">
-                         <div class="absolute left-0 bottom-0 h-[2px] w-0 bg-primary card-progress-bar group-hover:w-full transition-all duration-500 ease-in-out"></div>
-                         <div class="p-4 md:p-8 md:pt-10 flex-grow flex flex-col">
-                            <div class="h-8 md:h-12 w-full flex items-center justify-center md:justify-start mb-3 md:mb-8 relative">
-                                <img src="/logos/VSB Infra.svg" alt="VSB Infra" class="h-full w-auto max-w-full object-contain object-center md:object-left" />
+                    <div class="js-reveal group flex flex-col theme-card border rounded-none shadow-sm relative overflow-hidden focus:outline-none focus:border-primary"
+                        style="transition-delay: 100ms">
+                        <div
+                            class="absolute left-0 bottom-0 h-[2px] w-0 bg-primary card-progress-bar group-hover:w-full transition-all duration-500 ease-in-out">
+                        </div>
+                        <div class="p-4 md:p-8 md:pt-10 flex-grow flex flex-col">
+                            <div
+                                class="h-8 md:h-12 w-full flex items-center justify-center md:justify-start mb-3 md:mb-8 relative">
+                                <img src="/logos/VSB Infra.svg" alt="VSB Infra"
+                                    class="h-full w-auto max-w-full object-contain object-center md:object-left" />
                             </div>
-                            <div class="h-px w-8 theme-divider-line mb-2 md:mb-6 group-hover:bg-primary transition-colors duration-300 mx-auto md:mx-0"></div>
-                            <p class="theme-text-muted font-medium text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-none text-center md:text-left">{{ sub9_desc }}</p>
+                            <div
+                                class="h-px w-8 theme-divider-line mb-2 md:mb-6 group-hover:bg-primary transition-colors duration-300 mx-auto md:mx-0">
+                            </div>
+                            <p
+                                class="theme-text-muted font-medium text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-none text-center md:text-left">
+                                {{ sub9_desc }}</p>
                         </div>
                         <div class="px-4 pb-2 md:px-8 md:pb-8 flex items-center justify-between mt-auto">
-                            <a href="https://vsb-infra.de/" target="_blank" rel="noopener" class="stretched-link text-primary font-bold text-[0.65rem] uppercase tracking-widest hover:text-slate-900 transition-colors hidden md:inline">{{ hub_cta }}</a>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-300 group-hover:text-primary transition-colors hidden md:block card-arrow"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                            <a href="https://vsb-infra.de/" target="_blank" rel="noopener"
+                                class="stretched-link text-primary font-bold text-[0.65rem] uppercase tracking-widest hover:text-slate-900 transition-colors hidden md:inline">{{
+                                hub_cta }}</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="text-slate-300 group-hover:text-primary transition-colors hidden md:block card-arrow">
+                                <path d="M7 7h10v10" />
+                                <path d="M7 17 17 7" />
+                            </svg>
                         </div>
                     </div>
 
-                    <div class="js-reveal group flex flex-col theme-card border rounded-none shadow-sm relative overflow-hidden focus:outline-none focus:border-primary" style="transition-delay: 150ms">
-                         <div class="absolute left-0 bottom-0 h-[2px] w-0 bg-primary card-progress-bar group-hover:w-full transition-all duration-500 ease-in-out"></div>
-                         <div class="p-4 md:p-8 md:pt-10 flex-grow flex flex-col">
-                            <div class="h-8 md:h-12 w-full flex items-center justify-center md:justify-start mb-3 md:mb-8 relative">
-                                <img src="/logos/Schnorpfeil Transport.svg" alt="Schnorpfeil Transport" class="h-full w-auto max-w-full object-contain object-center md:object-left" />
+                    <div class="js-reveal group flex flex-col theme-card border rounded-none shadow-sm relative overflow-hidden focus:outline-none focus:border-primary"
+                        style="transition-delay: 150ms">
+                        <div
+                            class="absolute left-0 bottom-0 h-[2px] w-0 bg-primary card-progress-bar group-hover:w-full transition-all duration-500 ease-in-out">
+                        </div>
+                        <div class="p-4 md:p-8 md:pt-10 flex-grow flex flex-col">
+                            <div
+                                class="h-8 md:h-12 w-full flex items-center justify-center md:justify-start mb-3 md:mb-8 relative">
+                                <img src="/logos/Schnorpfeil Transport.svg" alt="Schnorpfeil Transport"
+                                    class="h-full w-auto max-w-full object-contain object-center md:object-left" />
                             </div>
-                            <div class="h-px w-8 theme-divider-line mb-2 md:mb-6 group-hover:bg-primary transition-colors duration-300 mx-auto md:mx-0"></div>
-                            <p class="theme-text-muted font-medium text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-none text-center md:text-left">{{ sub10_desc }}</p>
+                            <div
+                                class="h-px w-8 theme-divider-line mb-2 md:mb-6 group-hover:bg-primary transition-colors duration-300 mx-auto md:mx-0">
+                            </div>
+                            <p
+                                class="theme-text-muted font-medium text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-none text-center md:text-left">
+                                {{ sub10_desc }}</p>
                         </div>
                         <div class="px-4 pb-2 md:px-8 md:pb-8 flex items-center justify-between mt-auto">
-                            <a href="https://schnorpfeil-transport.de/" target="_blank" rel="noopener" class="stretched-link text-primary font-bold text-[0.65rem] uppercase tracking-widest hover:text-slate-900 transition-colors hidden md:inline">{{ hub_cta }}</a>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-300 group-hover:text-primary transition-colors hidden md:block card-arrow"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                            <a href="https://schnorpfeil-transport.de/" target="_blank" rel="noopener"
+                                class="stretched-link text-primary font-bold text-[0.65rem] uppercase tracking-widest hover:text-slate-900 transition-colors hidden md:inline">{{
+                                hub_cta }}</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="text-slate-300 group-hover:text-primary transition-colors hidden md:block card-arrow">
+                                <path d="M7 7h10v10" />
+                                <path d="M7 17 17 7" />
+                            </svg>
                         </div>
                     </div>
 
-                    <div class="js-reveal group flex flex-col theme-card border rounded-none shadow-sm relative overflow-hidden focus:outline-none focus:border-primary" style="transition-delay: 200ms">
-                         <div class="absolute left-0 bottom-0 h-[2px] w-0 bg-primary card-progress-bar group-hover:w-full transition-all duration-500 ease-in-out"></div>
-                         <div class="p-4 md:p-8 md:pt-10 flex-grow flex flex-col">
-                            <div class="h-8 md:h-12 w-full flex items-center justify-center md:justify-start mb-3 md:mb-8 relative">
-                                <img src="/logos/Der Saugbagger.svg" alt="Der Saugbagger" class="h-full w-auto max-w-full object-contain object-center md:object-left" />
+                    <div class="js-reveal group flex flex-col theme-card border rounded-none shadow-sm relative overflow-hidden focus:outline-none focus:border-primary"
+                        style="transition-delay: 200ms">
+                        <div
+                            class="absolute left-0 bottom-0 h-[2px] w-0 bg-primary card-progress-bar group-hover:w-full transition-all duration-500 ease-in-out">
+                        </div>
+                        <div class="p-4 md:p-8 md:pt-10 flex-grow flex flex-col">
+                            <div
+                                class="h-8 md:h-12 w-full flex items-center justify-center md:justify-start mb-3 md:mb-8 relative">
+                                <img src="/logos/Der Saugbagger.svg" alt="Der Saugbagger"
+                                    class="h-full w-auto max-w-full object-contain object-center md:object-left" />
                             </div>
-                            <div class="h-px w-8 theme-divider-line mb-2 md:mb-6 group-hover:bg-primary transition-colors duration-300 mx-auto md:mx-0"></div>
-                            <p class="theme-text-muted font-medium text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-none text-center md:text-left">{{ sub11_desc }}</p>
+                            <div
+                                class="h-px w-8 theme-divider-line mb-2 md:mb-6 group-hover:bg-primary transition-colors duration-300 mx-auto md:mx-0">
+                            </div>
+                            <p
+                                class="theme-text-muted font-medium text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-none text-center md:text-left">
+                                {{ sub11_desc }}</p>
                         </div>
                         <div class="px-4 pb-2 md:px-8 md:pb-8 flex items-center justify-between mt-auto">
-                            <a href="https://der-saugbagger.de/" target="_blank" rel="noopener" class="stretched-link text-primary font-bold text-[0.65rem] uppercase tracking-widest hover:text-slate-900 transition-colors hidden md:inline">{{ hub_cta }}</a>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-300 group-hover:text-primary transition-colors hidden md:block card-arrow"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                            <a href="https://der-saugbagger.de/" target="_blank" rel="noopener"
+                                class="stretched-link text-primary font-bold text-[0.65rem] uppercase tracking-widest hover:text-slate-900 transition-colors hidden md:inline">{{
+                                hub_cta }}</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="text-slate-300 group-hover:text-primary transition-colors hidden md:block card-arrow">
+                                <path d="M7 7h10v10" />
+                                <path d="M7 17 17 7" />
+                            </svg>
                         </div>
                     </div>
 
@@ -532,8 +869,10 @@
                     <address class="not-italic text-white/70 text-sm leading-relaxed space-y-1">
                         <p>Kastellauner Straße 51</p>
                         <p>56253 Treis-Karden</p>
-                        <p class="mt-2">Tel: <a href="tel:+49267269-0" class="hover:text-white transition-colors">02672 69 0</a></p>
-                        <p><a href="mailto:info@schnorpfeil.com" class="hover:text-white transition-colors">info@schnorpfeil.com</a></p>
+                        <p class="mt-2">Tel: <a href="tel:+49267269-0" class="hover:text-white transition-colors">02672
+                                69 0</a></p>
+                        <p><a href="mailto:info@schnorpfeil.com"
+                                class="hover:text-white transition-colors">info@schnorpfeil.com</a></p>
                     </address>
                 </div>
 
@@ -541,10 +880,14 @@
                 <div class="flex flex-col">
                     <h4 class="text-sm font-bold mb-4">Heinz Schnorpfeil Bau GmbH</h4>
                     <ul class="space-y-2 text-sm text-white/70">
-                        <li><a href="https://schnorpfeil.eu/" target="_blank" rel="noopener" class="hover:text-white transition-colors">{{ footer_link_startseite }}</a></li>
-                        <li><a href="https://schnorpfeil.eu/ueber-uns/" target="_blank" rel="noopener" class="hover:text-white transition-colors">{{ footer_link_ueber_uns }}</a></li>
-                        <li><a href="https://schnorpfeil.eu/geschaeftsfelder/" target="_blank" rel="noopener" class="hover:text-white transition-colors">{{ footer_link_geschaeftsfelder }}</a></li>
-                        <li><a href="https://schnorpfeil.eu/karriere/" target="_blank" rel="noopener" class="hover:text-white transition-colors">{{ footer_link_karriere }}</a></li>
+                        <li><a href="https://schnorpfeil.eu/" target="_blank" rel="noopener"
+                                class="hover:text-white transition-colors">{{ footer_link_startseite }}</a></li>
+                        <li><a href="https://schnorpfeil.eu/ueber-uns/" target="_blank" rel="noopener"
+                                class="hover:text-white transition-colors">{{ footer_link_ueber_uns }}</a></li>
+                        <li><a href="https://schnorpfeil.eu/geschaeftsfelder/" target="_blank" rel="noopener"
+                                class="hover:text-white transition-colors">{{ footer_link_geschaeftsfelder }}</a></li>
+                        <li><a href="https://schnorpfeil.eu/karriere/" target="_blank" rel="noopener"
+                                class="hover:text-white transition-colors">{{ footer_link_karriere }}</a></li>
                     </ul>
                 </div>
 
@@ -552,9 +895,13 @@
                 <div class="flex flex-col">
                     <h4 class="text-sm font-bold mb-4">{{ footer_service_title }}</h4>
                     <ul class="space-y-2 text-sm text-white/70">
-                        <li><a href="https://schnorpfeil.mitarbeiterangebote.de/login" target="_blank" rel="noopener" class="hover:text-white transition-colors">Corporate Benefits</a></li>
-                        <li><a href="https://mssv2.mascotsmartstore.com/Account/SignIn?ReturnUrl=%2f#!/Customer/Orders/0" target="_blank" rel="noopener" class="hover:text-white transition-colors">{{ footer_link_arbeitskleidung }}</a></li>
-                        <li><a href="https://www.schnorpfeil-shop.de/startseite.html" target="_blank" rel="noopener" class="hover:text-white transition-colors">{{ footer_link_bekleidung }}</a></li>
+                        <li><a href="https://schnorpfeil.mitarbeiterangebote.de/login" target="_blank" rel="noopener"
+                                class="hover:text-white transition-colors">Corporate Benefits</a></li>
+                        <li><a href="https://mssv2.mascotsmartstore.com/Account/SignIn?ReturnUrl=%2f#!/Customer/Orders/0"
+                                target="_blank" rel="noopener" class="hover:text-white transition-colors">{{
+                                footer_link_arbeitskleidung }}</a></li>
+                        <li><a href="https://www.schnorpfeil-shop.de/startseite.html" target="_blank" rel="noopener"
+                                class="hover:text-white transition-colors">{{ footer_link_bekleidung }}</a></li>
                     </ul>
                 </div>
             </div>
@@ -566,29 +913,55 @@
                 <!-- Social Icons -->
                 <div class="flex items-center gap-5">
                     <!-- Facebook -->
-                    <a href="https://www.facebook.com/people/Heinz-Schnorpfeil-Bau/100085589364510/" target="_blank" rel="noopener" aria-label="Facebook" class="text-white/60 hover:text-white transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 1.09.049 1.592.145v3.243a9 9 0 0 0-.928-.046c-1.316 0-1.826.498-1.826 1.793v2.423h3.578l-.614 3.667h-2.964v8.128C18.862 23.028 23.001 18.005 23.001 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.875 10.35 9.101 11.618Z"/></svg>
+                    <a href="https://www.facebook.com/people/Heinz-Schnorpfeil-Bau/100085589364510/" target="_blank"
+                        rel="noopener" aria-label="Facebook" class="text-white/60 hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 1.09.049 1.592.145v3.243a9 9 0 0 0-.928-.046c-1.316 0-1.826.498-1.826 1.793v2.423h3.578l-.614 3.667h-2.964v8.128C18.862 23.028 23.001 18.005 23.001 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.875 10.35 9.101 11.618Z" />
+                        </svg>
                     </a>
                     <!-- LinkedIn -->
-                    <a href="https://de.linkedin.com/company/heinz-schnorpfeil-bau-gmbh" target="_blank" rel="noopener" aria-label="LinkedIn" class="text-white/60 hover:text-white transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    <a href="https://de.linkedin.com/company/heinz-schnorpfeil-bau-gmbh" target="_blank" rel="noopener"
+                        aria-label="LinkedIn" class="text-white/60 hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
                     </a>
                     <!-- XING -->
-                    <a href="https://www.xing.com/pages/heinzschnorpfeilbaugmbh" target="_blank" rel="noopener" aria-label="XING" class="text-white/60 hover:text-white transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L3.169 13.89c-.09.182-.09.379 0 .529.087.142.26.218.473.218h3.435c.517 0 .752-.337.92-.659 0 0 2.408-4.288 2.494-4.443-.017-.025-2.393-4.183-2.393-4.183-.166-.321-.406-.612-.92-.612H3.648z"/></svg>
+                    <a href="https://www.xing.com/pages/heinzschnorpfeilbaugmbh" target="_blank" rel="noopener"
+                        aria-label="XING" class="text-white/60 hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L3.169 13.89c-.09.182-.09.379 0 .529.087.142.26.218.473.218h3.435c.517 0 .752-.337.92-.659 0 0 2.408-4.288 2.494-4.443-.017-.025-2.393-4.183-2.393-4.183-.166-.321-.406-.612-.92-.612H3.648z" />
+                        </svg>
                     </a>
                     <!-- Instagram -->
-                    <a href="https://www.instagram.com/schnorpfeil.bau/" target="_blank" rel="noopener" aria-label="Instagram" class="text-white/60 hover:text-white transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                    <a href="https://www.instagram.com/schnorpfeil.bau/" target="_blank" rel="noopener"
+                        aria-label="Instagram" class="text-white/60 hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+                        </svg>
                     </a>
                     <!-- YouTube -->
-                    <a href="https://www.youtube.com/@Schnorpfeil-Bau" target="_blank" rel="noopener" aria-label="YouTube" class="text-white/60 hover:text-white transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <a href="https://www.youtube.com/@Schnorpfeil-Bau" target="_blank" rel="noopener"
+                        aria-label="YouTube" class="text-white/60 hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                        </svg>
                     </a>
                 </div>
 
                 <!-- Impressum & Datenschutz -->
-                <a href="https://www.schnorpfeil.com/common/info/impressum/index.html" target="_blank" rel="noopener" class="text-sm text-white/60 hover:text-white transition-colors">
+                <a href="https://www.schnorpfeil.com/common/info/impressum/index.html" target="_blank" rel="noopener"
+                    class="text-sm text-white/60 hover:text-white transition-colors">
                     {{ footer_impressum }}
                 </a>
 
@@ -603,7 +976,7 @@
     <!-- ANIMATION SCRIPT (V4: Counter + Scroll Reveals) -->
     <script>
         // 0. Theme toggle (blue mode / Nachtschicht)
-        (function() {
+        (function () {
             const saved = localStorage.getItem('schnorpfeil-theme');
             if (saved === 'blue') document.documentElement.setAttribute('data-theme', 'blue');
         })();
@@ -619,7 +992,7 @@
             const mIconHat = document.getElementById('mobile-theme-icon-hat');
             const mStatus = document.getElementById('mobile-theme-status');
 
-            updateToggle = function() {
+            updateToggle = function () {
                 const isBlue = document.documentElement.getAttribute('data-theme') === 'blue';
                 const isScrolled = document.getElementById('main-nav').classList.contains('is-scrolled');
                 // Slide dot: 3px (light) to 31px (blue)
@@ -693,7 +1066,7 @@
             }
             if (typeof updateToggle === 'function') updateToggle();
         }, { passive: true });
-        
+
         // Trigger once on load in case we start scrolled down
         if (window.scrollY > 20) {
             mainNav.classList.add('is-scrolled');
@@ -706,25 +1079,25 @@
         if (mobileMenuBtn && mobileMenu) {
             mobileMenuBtn.addEventListener('click', () => {
                 mobileMenuOpen = !mobileMenuOpen;
-                
+
                 if (mobileMenuOpen) {
                     mobileMenu.classList.remove('translate-x-full');
                     mobileMenu.classList.add('translate-x-0');
                     mainNav.classList.add('is-scrolled'); // Force glass header so icons turn dark
                     document.body.style.overflow = 'hidden'; // Prevent background scrolling
-                    
+
                     // Change to Close (X) icon
                     mobileMenuBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
                 } else {
                     mobileMenu.classList.remove('translate-x-0');
                     mobileMenu.classList.add('translate-x-full');
                     document.body.style.overflow = '';
-                    
+
                     // Revert header if at top
                     if (window.scrollY <= 20) {
                         mainNav.classList.remove('is-scrolled');
                     }
-                    
+
                     // Change to Hamburger icon
                     mobileMenuBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>';
                 }
@@ -754,11 +1127,11 @@
                         const elapsed = now - startTime;
                         const progress = Math.min(elapsed / duration, 1);
                         const current = Math.round(easeOutQuart(progress) * target);
-                        
+
                         // Format with thousands separator for smoother UI
                         const formattedText = new Intl.NumberFormat('de-DE').format(current);
                         el.textContent = formattedText + suffix;
-                        
+
                         if (progress < 1) requestAnimationFrame(step);
                     };
                     requestAnimationFrame(step);
@@ -838,4 +1211,5 @@
         }
     </script>
 </body>
+
 </html>
