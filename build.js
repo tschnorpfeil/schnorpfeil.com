@@ -30,38 +30,38 @@ locales.forEach(lang => {
         console.warn(`Warning: Missing locale file for ${lang}`);
         return;
     }
-    
+
     let rendered = template;
     const translations = JSON.parse(fs.readFileSync(localeFile, 'utf-8'));
-    
+
     // Inject Language Code for HTML lang attribute
     rendered = rendered.replace(/{{ lang }}/g, lang);
-    
+
     // Setup Navigation active states and URL prefixes
     const isDe = lang === 'de';
     const baseUrl = isDe ? basePath : `${basePath}${lang}/`;
-    
+
     // Inject baseUrl for logo link, canonical, etc.
     rendered = rendered.replace(/{{ baseUrl }}/g, baseUrl);
 
     // Render translation keys
     for (const [key, value] of Object.entries(translations)) {
-        const regex = new RegExp(`{{ ${key} }}`, 'g');
+        const regex = new RegExp(`\\{\\{\\s*${key}\\s*\\}\\}`, 'gs');
         rendered = rendered.replace(regex, value);
     }
-    
+
     // Create Output Directory if necessary
     const outPath = isDe ? path.join(outputDir, 'index.html') : path.join(outputDir, lang, 'index.html');
     const outDir = path.dirname(outPath);
-    
+
     if (!fs.existsSync(outDir)) {
         fs.mkdirSync(outDir, { recursive: true });
     }
-    
+
     // Inject proper active localized styles on switcher
     const switcherRegex = new RegExp(`<!-- SW_${lang.toUpperCase()} -->.*?<!-- END_SW_${lang.toUpperCase()} -->`, 'sg');
     rendered = rendered.replace(switcherRegex, `<span class="nav-link active mx-1.5 font-bold text-xs border-b-2 border-primary pb-[1px] transition-colors duration-300">${lang.toUpperCase()}</span>`);
-    
+
     // Clean up remaining switcher tags for unselected languages to standard links
     const cleanupRegexes = [
         { code: 'de', url: basePath },
@@ -69,7 +69,7 @@ locales.forEach(lang => {
         { code: 'pl', url: `${basePath}pl/` },
         { code: 'ru', url: `${basePath}ru/` }
     ];
-    
+
     cleanupRegexes.forEach(c => {
         if (c.code !== lang) {
             const cleanRe = new RegExp(`<!-- SW_${c.code.toUpperCase()} -->.*?<!-- END_SW_${c.code.toUpperCase()} -->`, 'sg');
