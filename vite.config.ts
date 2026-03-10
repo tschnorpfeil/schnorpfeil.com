@@ -2,7 +2,8 @@ import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
 import { resolve } from 'path'
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? '/schnorpfeil.com/' : '/',
   plugins: [
     tailwindcss(),
   ],
@@ -16,4 +17,4 @@ export default defineConfig({
       }
     }
   }
-})
+}))

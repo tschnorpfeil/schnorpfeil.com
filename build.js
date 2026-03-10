@@ -9,6 +9,9 @@ const templatePath = path.join(__dirname, 'src', 'template.html');
 const localesPath = path.join(__dirname, 'src', 'locales');
 const outputDir = __dirname;
 
+// Base path for deployment (e.g., '/schnorpfeil.com/' for GitHub Pages)
+const basePath = process.env.BASE_PATH || '/';
+
 const templateDir = path.dirname(templatePath);
 
 // Ensure template exists
@@ -36,7 +39,7 @@ locales.forEach(lang => {
     
     // Setup Navigation active states and URL prefixes
     const isDe = lang === 'de';
-    const baseUrl = isDe ? '/' : `/${lang}/`;
+    const baseUrl = isDe ? basePath : `${basePath}${lang}/`;
     
     // Inject baseUrl for logo link, canonical, etc.
     rendered = rendered.replace(/{{ baseUrl }}/g, baseUrl);
@@ -61,10 +64,10 @@ locales.forEach(lang => {
     
     // Clean up remaining switcher tags for unselected languages to standard links
     const cleanupRegexes = [
-        { code: 'de', url: '/' },
-        { code: 'en', url: '/en/' },
-        { code: 'pl', url: '/pl/' },
-        { code: 'ru', url: '/ru/' }
+        { code: 'de', url: basePath },
+        { code: 'en', url: `${basePath}en/` },
+        { code: 'pl', url: `${basePath}pl/` },
+        { code: 'ru', url: `${basePath}ru/` }
     ];
     
     cleanupRegexes.forEach(c => {
