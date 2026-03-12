@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Schnorpfeil - {{ nav_companies }}</title>
     <meta name="description" content="{{ meta_description }}" />
+    <meta http-equiv="content-language" content="{{ lang }}" />
     <!-- Canonical & Hreflang -->
     <link rel="canonical" href="https://schnorpfeil.com{{ baseUrl }}" />
     <link rel="alternate" hreflang="de" href="https://schnorpfeil.com/" />
@@ -32,6 +33,7 @@
     <!-- Official Open Sans Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
     <!-- Tailwind CSS -->
@@ -147,6 +149,39 @@
               "item": "https://schnorpfeil.com{{ baseUrl }}"
             }
           ]
+        }
+      ]
+    }
+    </script>
+    <!-- JSON-LD: FAQPage (GEO/AI-optimized) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Was macht die Schnorpfeil Unternehmensgruppe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Die Schnorpfeil Unternehmensgruppe ist ein familiengeführtes Bauunternehmen mit Sitz in Treis-Karden (Rheinland-Pfalz), gegründet 1948. Mit über 1.000 Mitarbeitern und 11 Tochterunternehmen deckt die Gruppe das gesamte Spektrum des Infrastrukturbaus ab: Straßenbau, Ingenieurbau, Erdbau, Asphalt- und Betonbau, Betonschutzwände, Gleitformbau, Fahrzeug-Rückhaltesysteme, Horizontalspülbohrungen, Baustoffgewinnung, Baustoffrecycling und Baustellentransporte."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Welche Tochterunternehmen gehören zur Schnorpfeil Gruppe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zur Unternehmensgruppe gehören: Heinz Schnorpfeil Bau GmbH, WALLSTOP GmbH & Co. KG, Schnorpfeil Rhein-Main GmbH & Co. KG, Heinz Schnorpfeil Baustoff GmbH & Co. KG (Mosel-Grauwacke), LINETECH GmbH & Co. KG, Baugesellschaft Gebr. Benkelberg & Co. GmbH, HSK Fugen- und Betonsanierung GmbH & Co. KG, InfraLine GmbH, VSB infra GmbH & Co. KG, Schnorpfeil Transport GmbH & Co. KG und Der Saugbagger."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wo ist die Schnorpfeil Gruppe tätig?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Die Schnorpfeil Gruppe hat ihren Hauptsitz in Treis-Karden an der Mosel und ist schwerpunktmäßig in Rheinland-Pfalz, Nordrhein-Westfalen, Hessen und dem Saarland tätig. Über die Tochtergesellschaft Schnorpfeil Rhein-Main wird auch die Metropolregion Frankfurt/Rhein-Main bedient. Projektbezogen ist die Gruppe bundesweit und international aktiv."
+          }
         }
       ]
     }
